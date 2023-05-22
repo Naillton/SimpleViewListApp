@@ -28,13 +28,23 @@ class MainActivity : AppCompatActivity() {
             "Italy",
         )
 
-        // definindo adaptador de array
-        val arrayAdapter: ArrayAdapter<*>
+
+        /*val arrayAdapter: ArrayAdapter<*>
         // no parametro do nosso adaptador podemos passar um layout customizado, aqui usamos um ja existente no androidStudio
         arrayAdapter = ArrayAdapter(
             this,
             android.R.layout.simple_expandable_list_item_1,
             world_cup_array
+        )*/
+
+        // usando um layout customizado, diferente do padrao usado acima
+        // ao criarmos um layout customizado temos que referenciar o id do TextView
+        val arrayAdapter: ArrayAdapter<*>
+        arrayAdapter = ArrayAdapter(
+            this,
+            R.layout.list_item,
+            R.id.tView,
+            world_cup_array,
         )
 
         // conectando listView ao nosso arrayAdapter
